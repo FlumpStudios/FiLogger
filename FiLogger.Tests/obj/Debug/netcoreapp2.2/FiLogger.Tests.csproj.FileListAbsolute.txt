@@ -1,0 +1,13 @@
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.Tests\bin\Debug\netcoreapp2.2\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.Tests\bin\Debug\netcoreapp2.2\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.Tests\bin\Debug\netcoreapp2.2\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.Tests\bin\Debug\netcoreapp2.2\FiLogger.Tests.deps.json
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.Tests\bin\Debug\netcoreapp2.2\FiLogger.Tests.runtimeconfig.json
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.Tests\bin\Debug\netcoreapp2.2\FiLogger.Tests.runtimeconfig.dev.json
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.Tests\bin\Debug\netcoreapp2.2\FiLogger.Tests.dll
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.Tests\bin\Debug\netcoreapp2.2\FiLogger.Tests.pdb
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.Tests\obj\Debug\netcoreapp2.2\FiLogger.Tests.csproj.CoreCompileInputs.cache
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.Tests\obj\Debug\netcoreapp2.2\FiLogger.Tests.AssemblyInfoInputs.cache
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.Tests\obj\Debug\netcoreapp2.2\FiLogger.Tests.AssemblyInfo.cs
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.Tests\obj\Debug\netcoreapp2.2\FiLogger.Tests.dll
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.Tests\obj\Debug\netcoreapp2.2\FiLogger.Tests.pdb

@@ -1,0 +1,2 @@
+2019-02-15 11:58:33.9581|INFO|FiLogger.API.Controllers.CustomerController|Hello World
+2019-02-15 11:58:34.5129|DEBUG|FiLogger.API.Controllers.CustomerController|Some error
