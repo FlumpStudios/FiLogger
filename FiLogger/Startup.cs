@@ -14,12 +14,15 @@ using Swashbuckle.AspNetCore.Swagger;
 using FiLogger.IoC.Config.Profiles;
 using CryptoLib;
 using DBContext = FiLogger.Context.Data;
+using FiLogger.DataAccess.Repositories;
+using FiLogger.Service.Contracts;
+using FiLogger.Service.Services;
 
 namespace FiLogger
 {
     public class Startup
     {
-        public IConfiguration Configuration { get; private set; }
+        public IConfiguration _configuration { get; private set; }
         public IHostingEnvironment HostingEnvironment { get; private set; }
 
         private AppSettings _appSettings;
@@ -27,7 +30,7 @@ namespace FiLogger
         public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
             HostingEnvironment = env;
-            Configuration = configuration;
+            _configuration = configuration;
         }
 
 
@@ -63,7 +66,7 @@ namespace FiLogger
                 );
 
             //App settings
-            var appSettingsSection = Configuration.GetSection("AppSettings");
+            var appSettingsSection = _configuration.GetSection("AppSettings");
             if (appSettingsSection == null)
                 throw new System.Exception("No appsettings section has been found");
 
@@ -103,24 +106,39 @@ namespace FiLogger
             services.AddAutoMapper();
             ConfigureMaps();
 
-
-            services.AddDbContext<DBContext.AP_ReplacementContext>(options =>
-                           options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
-
             
+            //Setup the DB context
+            if (_appSettings.Database.UseInMemoryDatabase)
+            {
+                string inMemDbName = string.Format("{0}_database", _appSettings.API.Title);
+
+                services.AddDbContext<DBContext.AP_ReplacementContext>(options =>
+                    options.UseInMemoryDatabase(inMemDbName));                
+            }
+            else
+            {
+                services.AddDbContext<DBContext.AP_ReplacementContext>(options => 
+                    options.UseSqlServer(_appSettings.Database.ConnectionString));
+            }
+
+
             AddCustomServices(services);
 
         }
 
         private void AddCustomServices(IServiceCollection services)
         {
-
-            var inputString = Configuration["EncryptionCipher:inputString"];
-            var salt = Configuration["EncryptionCipher:Salt"];
+            //Read the encyption keys from the Secrets
+            var inputString = _configuration["EncryptionCipher:inputString"];
+            var salt = _configuration["EncryptionCipher:Salt"];
 
             //Add the CryptoManager service through DI and pass through the input string and salt to the contructor
             //The keys are kept in the secret folder for developement. When running for the first time you will need to add the EncryptionCipher:inputString and EncryptionCipher:sale to your secrets.
             services.AddTransient<ICryptoManager>(s => new CryptoManager(inputString, salt));
+
+            services.AddTransient<ICustomerRepository, CustomerRepository>();
+
+            services.AddTransient<ICustomerService, CustomerService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -136,7 +154,7 @@ namespace FiLogger
                 app.UseHsts();
             }
 
-            //Pretty much let anyone from anywhere access out API.
+            //Pretty much let anyone from anywhere access our API.
             //Origins will be specified when we are closer to production and have some established clients - PM 14/02/2019
 
             if (_appSettings.IsValid())
@@ -162,14 +180,13 @@ namespace FiLogger
                 }
             }
 
-
             app.UseCors(builder => builder.AllowAnyHeader().AllowAnyOrigin().AllowCredentials().AllowAnyMethod());
             app.UseHttpsRedirection();
             app.UseMvc();
         }
 
 
-        //Startup helper functions
+        #region Startup helper functions
         Info CreateInfoForApiVersion(ApiVersionDescription description)
         {
             var info = new Info()
@@ -181,23 +198,20 @@ namespace FiLogger
 
             if (description.IsDeprecated)
             {
-                info.Description += " This API version has been deprecated.";
+                string.Format("{0} This API version has been deprecated.", info.Description);
             }
-
             return info;
         }
-
 
         private void ConfigureMaps()
         {
             //Mapping settings
             Mapper.Initialize(cfg =>
             {
-                cfg.AddProfile<APIMappingProfile>();
-                
+                cfg.AddProfile<CustomerMappingProfile>();                
             }
          );
-        }
-
+        }    
+        #endregion
     }
 }

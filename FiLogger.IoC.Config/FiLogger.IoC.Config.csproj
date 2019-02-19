@@ -8,4 +8,9 @@
     <PackageReference Include="AutoMapper" Version="8.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FiLogger.API.DataContracts\FiLogger.API.DataContracts.csproj" />
+    <ProjectReference Include="..\fiLogger.Common\FiLogger.Common.csproj" />
+  </ItemGroup>
+
 </Project>

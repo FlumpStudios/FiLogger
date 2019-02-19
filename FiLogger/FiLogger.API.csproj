@@ -33,7 +33,9 @@
   <ItemGroup>
     <ProjectReference Include="..\cryptolib\CryptoLib.csproj" />
     <ProjectReference Include="..\FiLogger.Context\FiLogger.Context.csproj" />
+    <ProjectReference Include="..\FiLogger.DataAccess\FiLogger.DataAccess.csproj" />
     <ProjectReference Include="..\FiLogger.IoC.Config\FiLogger.IoC.Config.csproj" />
+    <ProjectReference Include="..\FiLogger.Service\FiLogger.Service.csproj" />
   </ItemGroup>
   
 

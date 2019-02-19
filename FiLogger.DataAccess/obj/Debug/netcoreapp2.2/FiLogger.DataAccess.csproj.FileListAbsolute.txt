@@ -1,0 +1,16 @@
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.DataAccess\bin\Debug\netcoreapp2.2\FiLogger.DataAccess.deps.json
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.DataAccess\bin\Debug\netcoreapp2.2\FiLogger.DataAccess.dll
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.DataAccess\bin\Debug\netcoreapp2.2\FiLogger.DataAccess.pdb
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.DataAccess\bin\Debug\netcoreapp2.2\CryptoLib.dll
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.DataAccess\bin\Debug\netcoreapp2.2\FiLogger.Common.dll
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.DataAccess\bin\Debug\netcoreapp2.2\FiLogger.Context.dll
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.DataAccess\bin\Debug\netcoreapp2.2\FiLogger.Context.pdb
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.DataAccess\bin\Debug\netcoreapp2.2\CryptoLib.pdb
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.DataAccess\bin\Debug\netcoreapp2.2\FiLogger.Common.pdb
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.DataAccess\obj\Debug\netcoreapp2.2\FiLogger.DataAccess.csprojAssemblyReference.cache
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.DataAccess\obj\Debug\netcoreapp2.2\FiLogger.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.DataAccess\obj\Debug\netcoreapp2.2\FiLogger.DataAccess.AssemblyInfoInputs.cache
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.DataAccess\obj\Debug\netcoreapp2.2\FiLogger.DataAccess.AssemblyInfo.cs
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.DataAccess\obj\Debug\netcoreapp2.2\FiLogger.DataAccess.csproj.CopyComplete
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.DataAccess\obj\Debug\netcoreapp2.2\FiLogger.DataAccess.dll
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.DataAccess\obj\Debug\netcoreapp2.2\FiLogger.DataAccess.pdb

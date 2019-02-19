@@ -6,6 +6,12 @@
 
   <ItemGroup>
     <Compile Remove="Migrations\20190215171349_seed-data.cs" />
+    <Compile Remove="Migrations\20190218092758_seed-data.cs" />
+    <Compile Remove="Migrations\20190218093309_seed-data.cs" />
+    <Compile Remove="Migrations\20190218093530_seed-data.cs" />
+    <Compile Remove="Migrations\20190218094545_seed-data.cs" />
+    <Compile Remove="Migrations\20190218094717_seed-data.cs" />
+    <Compile Remove="Migrations\20190218103537_further-seeding.cs" />
   </ItemGroup>
 
   <ItemGroup>

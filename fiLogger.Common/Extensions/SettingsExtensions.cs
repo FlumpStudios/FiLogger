@@ -5,10 +5,13 @@ namespace FiLogger.Common.Extensions
     public static class SettingsExtensions
     {
 
+        /// <summary>
+        /// Check the app settings exist and are correct
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         public static bool IsValid(this AppSettings data)
         {
-
-            //TODO: Add some logging here PM 14/02/2019
             bool result = true;
 
             if (data == null)
@@ -32,6 +35,17 @@ namespace FiLogger.Common.Extensions
                 
             }
 
+            if (data.Database == null)
+            {
+                result = false;
+            }
+
+            if (string.IsNullOrEmpty(data.Database.ConnectionString))
+            {
+                result = false;
+            }
+
+            
             return result;
         }
     }

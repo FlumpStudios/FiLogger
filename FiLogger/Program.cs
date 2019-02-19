@@ -15,8 +15,8 @@ namespace FiLogger
                 .AddJsonFile("appsettings.json")
                 .Build();
 
-                //Setup up logging. PM: 15/02/2019
-                var connectionString = appSettings.GetConnectionString("DefaultConnection");
+                //Setup up serilog logging. PM: 15/02/2019
+                var connectionString = appSettings.GetSection("AppSettings:Database:ConnectionString").Value;
                 var SqlTable = appSettings.GetSection("Logging:sqlTable").Value;
 
                 Log.Logger = new LoggerConfiguration()
@@ -34,14 +34,13 @@ namespace FiLogger
                 }
                 finally
                 {
-                    // Close and flush the log.
                     Log.CloseAndFlush();
                 }
             }
 
             public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
                 WebHost.CreateDefaultBuilder(args)
-                    .UseSerilog() // Set serilog as the loggin provider.
+                    .UseSerilog()
                     .UseStartup<Startup>();
         }
     }

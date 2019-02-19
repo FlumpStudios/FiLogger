@@ -6,6 +6,7 @@ C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.T
 C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.Tests\bin\Debug\netcoreapp2.2\FiLogger.Tests.runtimeconfig.dev.json
 C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.Tests\bin\Debug\netcoreapp2.2\FiLogger.Tests.dll
 C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.Tests\bin\Debug\netcoreapp2.2\FiLogger.Tests.pdb
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.Tests\obj\Debug\netcoreapp2.2\FiLogger.Tests.csprojAssemblyReference.cache
 C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.Tests\obj\Debug\netcoreapp2.2\FiLogger.Tests.csproj.CoreCompileInputs.cache
 C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.Tests\obj\Debug\netcoreapp2.2\FiLogger.Tests.AssemblyInfoInputs.cache
 C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.Tests\obj\Debug\netcoreapp2.2\FiLogger.Tests.AssemblyInfo.cs

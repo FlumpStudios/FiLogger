@@ -1,8 +1,16 @@
 C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.IoC.Config\bin\Debug\netcoreapp2.2\FiLogger.IoC.Config.deps.json
 C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.IoC.Config\bin\Debug\netcoreapp2.2\FiLogger.IoC.Config.dll
 C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.IoC.Config\bin\Debug\netcoreapp2.2\FiLogger.IoC.Config.pdb
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.IoC.Config\bin\Debug\netcoreapp2.2\CryptoLib.dll
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.IoC.Config\bin\Debug\netcoreapp2.2\FiLogger.API.DataContracts.dll
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.IoC.Config\bin\Debug\netcoreapp2.2\FiLogger.Common.dll
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.IoC.Config\bin\Debug\netcoreapp2.2\FiLogger.API.DataContracts.pdb
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.IoC.Config\bin\Debug\netcoreapp2.2\FiLogger.Common.pdb
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.IoC.Config\bin\Debug\netcoreapp2.2\CryptoLib.pdb
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.IoC.Config\obj\Debug\netcoreapp2.2\FiLogger.IoC.Config.csprojAssemblyReference.cache
 C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.IoC.Config\obj\Debug\netcoreapp2.2\FiLogger.IoC.Config.csproj.CoreCompileInputs.cache
 C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.IoC.Config\obj\Debug\netcoreapp2.2\FiLogger.IoC.Config.AssemblyInfoInputs.cache
 C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.IoC.Config\obj\Debug\netcoreapp2.2\FiLogger.IoC.Config.AssemblyInfo.cs
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.IoC.Config\obj\Debug\netcoreapp2.2\FiLogger.IoC.Config.csproj.CopyComplete
 C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.IoC.Config\obj\Debug\netcoreapp2.2\FiLogger.IoC.Config.dll
 C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.IoC.Config\obj\Debug\netcoreapp2.2\FiLogger.IoC.Config.pdb

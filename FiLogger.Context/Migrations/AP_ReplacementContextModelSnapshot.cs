@@ -53,6 +53,21 @@ namespace FiLogger.Context.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("CoverDetails");
+
+                    b.HasData(
+                        new
+                        {
+                            CoverDetailsId = 1,
+                            CoverStartDate = new DateTime(2019, 2, 19, 11, 28, 58, 788, DateTimeKind.Local).AddTicks(7131),
+                            IsProductOnMainOrder = false,
+                            PolicyClaimLimitId = 1,
+                            PolicyDurationId = 1,
+                            PresentationDate = new DateTime(2019, 2, 19, 11, 28, 58, 788, DateTimeKind.Local).AddTicks(8688),
+                            ProductId = 1,
+                            RetailPrice = 5000m,
+                            TreatmentDate = new DateTime(2019, 2, 19, 11, 28, 58, 788, DateTimeKind.Local).AddTicks(9938),
+                            UniqueReference = "ABC 123"
+                        });
                 });
 
             modelBuilder.Entity("FiLogger.Common.Models.CustomerAddress", b =>
@@ -98,6 +113,22 @@ namespace FiLogger.Context.Migrations
                     b.HasIndex("CustomerId");
 
                     b.ToTable("CustomerAddress");
+
+                    b.HasData(
+                        new
+                        {
+                            AddressId = 1,
+                            AddressLine1 = "New Street",
+                            AddressLine2 = "Apple Avenue",
+                            County = "Warwickshire",
+                            CustomerId = 1,
+                            EmailAddress = "test@test.com",
+                            MobileNumber = "01234 678 910",
+                            PhoneNumber = "01895 123456",
+                            Postcode = "CV31 2KJ",
+                            PropertyNumber = "5",
+                            Town = "New Town"
+                        });
                 });
 
             modelBuilder.Entity("FiLogger.Common.Models.CustomerDetails", b =>
@@ -156,6 +187,63 @@ namespace FiLogger.Context.Migrations
                     b.HasIndex("TitleId");
 
                     b.ToTable("CustomerDetails");
+
+                    b.HasData(
+                        new
+                        {
+                            CustomerId = 1,
+                            ContactConsent = false,
+                            DeferedSalesStatusId = 1,
+                            DistanceSellingId = 1,
+                            FirstContactDate = new DateTime(2019, 2, 19, 11, 28, 58, 788, DateTimeKind.Local).AddTicks(1530),
+                            FirstName = "Tommy",
+                            FranchiseId = 1,
+                            HasCustomerInitiated = false,
+                            IsOrgansiation = false,
+                            PolicyStatusId = 1,
+                            RetailManagerId = 1,
+                            SalesPersonId = 1,
+                            SdnId = 1,
+                            Surname = "Test",
+                            TitleId = 1
+                        },
+                        new
+                        {
+                            CustomerId = 2,
+                            ContactConsent = true,
+                            DeferedSalesStatusId = 1,
+                            DistanceSellingId = 2,
+                            FirstContactDate = new DateTime(2019, 2, 19, 11, 28, 58, 788, DateTimeKind.Local).AddTicks(5625),
+                            FirstName = "John",
+                            FranchiseId = 2,
+                            HasCustomerInitiated = true,
+                            IsOrgansiation = true,
+                            OrgansiationName = "New Company LTD",
+                            PolicyStatusId = 1,
+                            RetailManagerId = 2,
+                            SalesPersonId = 1,
+                            SdnId = 2,
+                            Surname = "Smith",
+                            TitleId = 4
+                        },
+                        new
+                        {
+                            CustomerId = 3,
+                            ContactConsent = false,
+                            DeferedSalesStatusId = 2,
+                            DistanceSellingId = 1,
+                            FirstContactDate = new DateTime(2019, 2, 19, 11, 28, 58, 788, DateTimeKind.Local).AddTicks(6048),
+                            FirstName = "Jane",
+                            FranchiseId = 2,
+                            HasCustomerInitiated = false,
+                            IsOrgansiation = false,
+                            PolicyStatusId = 1,
+                            RetailManagerId = 1,
+                            SalesPersonId = 2,
+                            SdnId = 3,
+                            Surname = "Jones",
+                            TitleId = 2
+                        });
                 });
 
             modelBuilder.Entity("FiLogger.Common.Models.CustomerDocuments", b =>
@@ -174,6 +262,14 @@ namespace FiLogger.Context.Migrations
                     b.HasIndex("CustomerId");
 
                     b.ToTable("CustomerDocuments");
+
+                    b.HasData(
+                        new
+                        {
+                            DocumentId = 1,
+                            CustomerId = 1,
+                            DocumentLocation = "/documents/1234.pdf"
+                        });
                 });
 
             modelBuilder.Entity("FiLogger.Common.Models.CustomerProducts", b =>
@@ -194,6 +290,14 @@ namespace FiLogger.Context.Migrations
                     b.HasIndex("ProductsId");
 
                     b.ToTable("Customer-Products");
+
+                    b.HasData(
+                        new
+                        {
+                            CustomerId = 1,
+                            ProductsId = 1,
+                            ProductStatusId = 1
+                        });
                 });
 
             modelBuilder.Entity("FiLogger.Common.Models.DeferredProductStatus", b =>
@@ -217,6 +321,16 @@ namespace FiLogger.Context.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("DeferredProductStatus");
+
+                    b.HasData(
+                        new
+                        {
+                            DeferredProductId = 1,
+                            CustomerId = 1,
+                            PresentationDate = new DateTime(2019, 2, 19, 11, 28, 58, 786, DateTimeKind.Local).AddTicks(8336),
+                            PresentedToCustomer = false,
+                            ProductId = 1
+                        });
                 });
 
             modelBuilder.Entity("FiLogger.Common.Models.DeferredSalesStatus", b =>
@@ -231,6 +345,23 @@ namespace FiLogger.Context.Migrations
                     b.HasKey("DeferredSalesStatusId");
 
                     b.ToTable("DeferredSalesStatus");
+
+                    b.HasData(
+                        new
+                        {
+                            DeferredSalesStatusId = 1,
+                            DeferredSalesStatusValue = "Deferred Sale"
+                        },
+                        new
+                        {
+                            DeferredSalesStatusId = 2,
+                            DeferredSalesStatusValue = "Customer Can Initiate"
+                        },
+                        new
+                        {
+                            DeferredSalesStatusId = 3,
+                            DeferredSalesStatusValue = "Ready For Sale"
+                        });
                 });
 
             modelBuilder.Entity("FiLogger.Common.Models.DistanceSellingAcknowledgementOptions", b =>
@@ -245,6 +376,28 @@ namespace FiLogger.Context.Migrations
                     b.HasKey("DistanceSellingId");
 
                     b.ToTable("DistanceSellingAcknowledgementOptions");
+
+                    b.HasData(
+                        new
+                        {
+                            DistanceSellingId = 1,
+                            DistanceSellingDescription = "if you buy in person..."
+                        },
+                        new
+                        {
+                            DistanceSellingId = 2,
+                            DistanceSellingDescription = "If you are addressed..."
+                        },
+                        new
+                        {
+                            DistanceSellingId = 3,
+                            DistanceSellingDescription = "If you purchase..."
+                        },
+                        new
+                        {
+                            DistanceSellingId = 4,
+                            DistanceSellingDescription = "This is a business..."
+                        });
                 });
 
             modelBuilder.Entity("FiLogger.Common.Models.FinanceCompanyOptions", b =>
@@ -259,6 +412,28 @@ namespace FiLogger.Context.Migrations
                     b.HasKey("FinanceCompanyId");
 
                     b.ToTable("FinanceCompanyOptions");
+
+                    b.HasData(
+                        new
+                        {
+                            FinanceCompanyId = 1,
+                            FinanceCompanyName = "VMFS"
+                        },
+                        new
+                        {
+                            FinanceCompanyId = 2,
+                            FinanceCompanyName = "Honda"
+                        },
+                        new
+                        {
+                            FinanceCompanyId = 3,
+                            FinanceCompanyName = "Toyota"
+                        },
+                        new
+                        {
+                            FinanceCompanyId = 4,
+                            FinanceCompanyName = "Jaguar"
+                        });
                 });
 
             modelBuilder.Entity("FiLogger.Common.Models.FinanceDetails", b =>
@@ -292,6 +467,20 @@ namespace FiLogger.Context.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("FinanceDetails");
+
+                    b.HasData(
+                        new
+                        {
+                            FinanceDetailsId = 1,
+                            AmountFinanced = 25000m,
+                            AnticipatedMilage = 1000,
+                            ContractedMilage = 1000,
+                            FinalPaymentAmount = 5000m,
+                            FinanceCompanyId = 1,
+                            FinanceTermMonths = (byte)12,
+                            FinanceTypeId = 1,
+                            ProductId = 1
+                        });
                 });
 
             modelBuilder.Entity("FiLogger.Common.Models.FinanceTypeOptions", b =>
@@ -306,6 +495,23 @@ namespace FiLogger.Context.Migrations
                     b.HasKey("FinanceTypeId");
 
                     b.ToTable("FinanceTypeOptions");
+
+                    b.HasData(
+                        new
+                        {
+                            FinanceTypeId = 1,
+                            FinanceTypeName = "PCP"
+                        },
+                        new
+                        {
+                            FinanceTypeId = 2,
+                            FinanceTypeName = "Conditional Sale"
+                        },
+                        new
+                        {
+                            FinanceTypeId = 4,
+                            FinanceTypeName = "Personal Loan"
+                        });
                 });
 
             modelBuilder.Entity("FiLogger.Common.Models.FranchiseOptions", b =>
@@ -320,6 +526,23 @@ namespace FiLogger.Context.Migrations
                     b.HasKey("FranchiseId");
 
                     b.ToTable("FranchiseOptions");
+
+                    b.HasData(
+                        new
+                        {
+                            FranchiseId = 1,
+                            FranshiseName = "Non-Franchise sale"
+                        },
+                        new
+                        {
+                            FranchiseId = 2,
+                            FranshiseName = "Lexus"
+                        },
+                        new
+                        {
+                            FranchiseId = 3,
+                            FranshiseName = "Honda"
+                        });
                 });
 
             modelBuilder.Entity("FiLogger.Common.Models.PolicyClaimLimitOptions", b =>
@@ -334,6 +557,18 @@ namespace FiLogger.Context.Migrations
                     b.HasKey("PolicyClaimLimitId");
 
                     b.ToTable("PolicyClaimLimitOptions");
+
+                    b.HasData(
+                        new
+                        {
+                            PolicyClaimLimitId = 1,
+                            PolicyClaimLimitValue = "Per Cover"
+                        },
+                        new
+                        {
+                            PolicyClaimLimitId = 2,
+                            PolicyClaimLimitValue = "Purchase Price"
+                        });
                 });
 
             modelBuilder.Entity("FiLogger.Common.Models.PolicyDurationOptions", b =>
@@ -348,6 +583,23 @@ namespace FiLogger.Context.Migrations
                     b.HasKey("PolicyDurationId");
 
                     b.ToTable("PolicyDurationOptions");
+
+                    b.HasData(
+                        new
+                        {
+                            PolicyDurationId = 1,
+                            PolicyDurationValue = "Per cover"
+                        },
+                        new
+                        {
+                            PolicyDurationId = 2,
+                            PolicyDurationValue = "12 Month"
+                        },
+                        new
+                        {
+                            PolicyDurationId = 3,
+                            PolicyDurationValue = "24 Month"
+                        });
                 });
 
             modelBuilder.Entity("FiLogger.Common.Models.PolicyStatusOptions", b =>
@@ -362,6 +614,23 @@ namespace FiLogger.Context.Migrations
                     b.HasKey("PolicyStatusId");
 
                     b.ToTable("PolicyStatusOptions");
+
+                    b.HasData(
+                        new
+                        {
+                            PolicyStatusId = 1,
+                            PolicyStatus = "Partial Quote"
+                        },
+                        new
+                        {
+                            PolicyStatusId = 2,
+                            PolicyStatus = "Cancelled"
+                        },
+                        new
+                        {
+                            PolicyStatusId = 3,
+                            PolicyStatus = "Not Taken up"
+                        });
                 });
 
             modelBuilder.Entity("FiLogger.Common.Models.PolicyType", b =>
@@ -380,6 +649,38 @@ namespace FiLogger.Context.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("PolicyType");
+
+                    b.HasData(
+                        new
+                        {
+                            PolicyId = 1,
+                            PolicyName = "Listers SMART £10 bodyshop  Excess",
+                            ProductId = 1
+                        },
+                        new
+                        {
+                            PolicyId = 2,
+                            PolicyName = "Listers GAP",
+                            ProductId = 2
+                        },
+                        new
+                        {
+                            PolicyId = 3,
+                            PolicyName = "Listers Protech Plus Fabric.",
+                            ProductId = 3
+                        },
+                        new
+                        {
+                            PolicyId = 4,
+                            PolicyName = "Listers Protech Plus Leather.",
+                            ProductId = 3
+                        },
+                        new
+                        {
+                            PolicyId = 5,
+                            PolicyName = "Listers Protech ",
+                            ProductId = 3
+                        });
                 });
 
             modelBuilder.Entity("FiLogger.Common.Models.ProductTypeOptions", b =>
@@ -394,6 +695,18 @@ namespace FiLogger.Context.Migrations
                     b.HasKey("ProductTypeId");
 
                     b.ToTable("ProductTypeOptions");
+
+                    b.HasData(
+                        new
+                        {
+                            ProductTypeId = 1,
+                            ProductTypeName = "Cover"
+                        },
+                        new
+                        {
+                            ProductTypeId = 2,
+                            ProductTypeName = "Finace"
+                        });
                 });
 
             modelBuilder.Entity("FiLogger.Common.Models.ProductsAndServicesOptions", b =>
@@ -414,6 +727,43 @@ namespace FiLogger.Context.Migrations
                     b.HasIndex("ProductTypeId");
 
                     b.ToTable("ProductsAndServicesOptions");
+
+                    b.HasData(
+                        new
+                        {
+                            ProductId = 1,
+                            IsDeferredProduct = false,
+                            ProductName = "Listers SMART",
+                            ProductTypeId = 1
+                        },
+                        new
+                        {
+                            ProductId = 2,
+                            IsDeferredProduct = true,
+                            ProductName = "Listers GAP",
+                            ProductTypeId = 1
+                        },
+                        new
+                        {
+                            ProductId = 3,
+                            IsDeferredProduct = false,
+                            ProductName = "Listers Protech",
+                            ProductTypeId = 1
+                        },
+                        new
+                        {
+                            ProductId = 4,
+                            IsDeferredProduct = false,
+                            ProductName = "Listers Hire Purchase",
+                            ProductTypeId = 2
+                        },
+                        new
+                        {
+                            ProductId = 5,
+                            IsDeferredProduct = false,
+                            ProductName = "Listers Lease Purchase",
+                            ProductTypeId = 1
+                        });
                 });
 
             modelBuilder.Entity("FiLogger.Common.Models.ProductsAndServicesStatusOptions", b =>
@@ -428,6 +778,23 @@ namespace FiLogger.Context.Migrations
                     b.HasKey("ProductsStatusId");
 
                     b.ToTable("ProductsAndServicesStatusOptions");
+
+                    b.HasData(
+                        new
+                        {
+                            ProductsStatusId = 1,
+                            ProductStatus = "Not Taken"
+                        },
+                        new
+                        {
+                            ProductsStatusId = 2,
+                            ProductStatus = "Taken"
+                        },
+                        new
+                        {
+                            ProductsStatusId = 3,
+                            ProductStatus = "Amended"
+                        });
                 });
 
             modelBuilder.Entity("FiLogger.Common.Models.RetailManagerOptions", b =>
@@ -442,6 +809,18 @@ namespace FiLogger.Context.Migrations
                     b.HasKey("RetailManagerId");
 
                     b.ToTable("RetailManagerOptions");
+
+                    b.HasData(
+                        new
+                        {
+                            RetailManagerId = 1,
+                            RetailManagerName = "Richard Branson"
+                        },
+                        new
+                        {
+                            RetailManagerId = 2,
+                            RetailManagerName = "Elon Musk"
+                        });
                 });
 
             modelBuilder.Entity("FiLogger.Common.Models.SalesPersonOptions", b =>
@@ -456,6 +835,18 @@ namespace FiLogger.Context.Migrations
                     b.HasKey("SalesPersonId");
 
                     b.ToTable("SalesPersonOptions");
+
+                    b.HasData(
+                        new
+                        {
+                            SalesPersonId = 1,
+                            SalesPersonName = "Richard Branson"
+                        },
+                        new
+                        {
+                            SalesPersonId = 2,
+                            SalesPersonName = "Elon Musk"
+                        });
                 });
 
             modelBuilder.Entity("FiLogger.Common.Models.SdnOptions", b =>
@@ -481,6 +872,18 @@ namespace FiLogger.Context.Migrations
                     b.HasIndex("CustomerId");
 
                     b.ToTable("SdnOptions");
+
+                    b.HasData(
+                        new
+                        {
+                            SdnId = 1,
+                            CustomerId = 1,
+                            IsCommercial = false,
+                            IsFullyComp = false,
+                            IsFullyInsured = false,
+                            IsLeisure = false,
+                            IsPrivateHire = false
+                        });
                 });
 
             modelBuilder.Entity("FiLogger.Common.Models.TitleOptions", b =>
@@ -495,6 +898,38 @@ namespace FiLogger.Context.Migrations
                     b.HasKey("TitleId");
 
                     b.ToTable("TitleOptions");
+
+                    b.HasData(
+                        new
+                        {
+                            TitleId = 1,
+                            TitleName = "Mr"
+                        },
+                        new
+                        {
+                            TitleId = 2,
+                            TitleName = "Mrs"
+                        },
+                        new
+                        {
+                            TitleId = 3,
+                            TitleName = "Ms"
+                        },
+                        new
+                        {
+                            TitleId = 4,
+                            TitleName = "Mx"
+                        },
+                        new
+                        {
+                            TitleId = 5,
+                            TitleName = "Doctor"
+                        },
+                        new
+                        {
+                            TitleId = 6,
+                            TitleName = "Professor"
+                        });
                 });
 
             modelBuilder.Entity("FiLogger.Common.Models.VehicleDetails", b =>
@@ -565,6 +1000,29 @@ namespace FiLogger.Context.Migrations
                     b.HasIndex("VehicleUseId");
 
                     b.ToTable("VehicleDetails");
+
+                    b.HasData(
+                        new
+                        {
+                            VehicleId = 1,
+                            Aspiration = "Turbo",
+                            CurrentMileage = 50m,
+                            CustomerId = 1,
+                            DateRegistered = new DateTime(2019, 2, 19, 11, 28, 58, 781, DateTimeKind.Local).AddTicks(1514),
+                            EngineSize = "999cc",
+                            IsFinanced = false,
+                            IsNew = false,
+                            Keyword1 = "White",
+                            Keyword2 = "Hatchback",
+                            Keyword3 = "FWD",
+                            Manufacturer = "SEAT",
+                            Model = "Arona",
+                            PurchasedDate = new DateTime(2019, 2, 19, 11, 28, 58, 782, DateTimeKind.Local).AddTicks(8993),
+                            VehicleRegAvailable = true,
+                            VehicleRegistration = "HGV12FD",
+                            VehicleTypeId = 1,
+                            VehicleUseId = 1
+                        });
                 });
 
             modelBuilder.Entity("FiLogger.Common.Models.VehicleTypeOptions", b =>
@@ -579,6 +1037,18 @@ namespace FiLogger.Context.Migrations
                     b.HasKey("VehicleTypeId");
 
                     b.ToTable("VehicleTypeOptions");
+
+                    b.HasData(
+                        new
+                        {
+                            VehicleTypeId = 1,
+                            VehicleTypeName = "Car"
+                        },
+                        new
+                        {
+                            VehicleTypeId = 2,
+                            VehicleTypeName = "LCV"
+                        });
                 });
 
             modelBuilder.Entity("FiLogger.Common.Models.VehicleUseOptions", b =>
@@ -593,6 +1063,33 @@ namespace FiLogger.Context.Migrations
                     b.HasKey("VehicleUseId");
 
                     b.ToTable("VehicleUseOptions");
+
+                    b.HasData(
+                        new
+                        {
+                            VehicleUseId = 1,
+                            VehicleUseName = "Private"
+                        },
+                        new
+                        {
+                            VehicleUseId = 2,
+                            VehicleUseName = "Commercial"
+                        },
+                        new
+                        {
+                            VehicleUseId = 3,
+                            VehicleUseName = "Hire and Reward"
+                        },
+                        new
+                        {
+                            VehicleUseId = 4,
+                            VehicleUseName = "Motability"
+                        },
+                        new
+                        {
+                            VehicleUseId = 5,
+                            VehicleUseName = "Business"
+                        });
                 });
 
             modelBuilder.Entity("FiLogger.Common.Models.CoverDetails", b =>

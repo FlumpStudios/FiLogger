@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "88cc6672144e4faad52c9208f2d8c1ec685eaa56"
+    "signature": "92df5be2b1115b55e96ca69ecd0f72d312766bd4"
   },
   "compilationOptions": {},
   "targets": {
@@ -2810,6 +2810,14 @@
           }
         }
       },
+      "NLog/4.5.11": {
+        "runtime": {
+          "lib/netstandard2.0/NLog.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.5.11.8645"
+          }
+        }
+      },
       "Remotion.Linq/2.2.0": {
         "dependencies": {
           "System.Collections": "4.3.0",
@@ -4250,7 +4258,8 @@
       "FiLogger.Common/1.0.0": {
         "dependencies": {
           "CryptoLib": "1.0.0",
-          "Microsoft.AspNetCore.All": "2.2.2"
+          "Microsoft.AspNetCore.All": "2.2.2",
+          "NLog": "4.5.11"
         },
         "runtime": {
           "FiLogger.Common.dll": {}
@@ -5642,6 +5651,13 @@
       "sha512": "sha512-5PYT/IqQ+UK31AmZiSS102R6EsTo+LGTSI8bp7WAUqDKaF4wHXD8U9u4WxTI1vc64tYi++8p3dk3WWNqPFgldw==",
       "path": "newtonsoft.json.bson/1.0.1",
       "hashPath": "newtonsoft.json.bson.1.0.1.nupkg.sha512"
+    },
+    "NLog/4.5.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Yni/XrDfbEhaCSXJsDkmW/n5AunhOxZ7OKKb+0U1I1/d8ZaKt3Jjzf20g/xPiKljmYuZKYqI5iI34g138kK8UQ==",
+      "path": "nlog/4.5.11",
+      "hashPath": "nlog.4.5.11.nupkg.sha512"
     },
     "Remotion.Linq/2.2.0": {
       "type": "package",

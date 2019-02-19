@@ -1,0 +1,9 @@
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.API.DataContracts\bin\Debug\netcoreapp2.2\FiLogger.API.DataContracts.deps.json
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.API.DataContracts\bin\Debug\netcoreapp2.2\FiLogger.API.DataContracts.dll
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.API.DataContracts\bin\Debug\netcoreapp2.2\FiLogger.API.DataContracts.pdb
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.API.DataContracts\obj\Debug\netcoreapp2.2\FiLogger.API.DataContracts.csproj.CoreCompileInputs.cache
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.API.DataContracts\obj\Debug\netcoreapp2.2\FiLogger.API.DataContracts.AssemblyInfoInputs.cache
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.API.DataContracts\obj\Debug\netcoreapp2.2\FiLogger.API.DataContracts.AssemblyInfo.cs
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.API.DataContracts\obj\Debug\netcoreapp2.2\FiLogger.API.DataContracts.dll
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.API.DataContracts\obj\Debug\netcoreapp2.2\FiLogger.API.DataContracts.pdb
+C:\Users\paul.marrable\Documents\Visual Studio 2017\Projects\FiLogger\FiLogger.API.DataContracts\obj\Debug\netcoreapp2.2\FiLogger.API.DataContracts.csprojAssemblyReference.cache

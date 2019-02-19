@@ -3633,6 +3633,15 @@
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
+      "NLog/4.5.11": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/NLog.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/NLog.dll": {}
+        }
+      },
       "NuGet.Frameworks/4.7.0": {
         "type": "package",
         "dependencies": {
@@ -6099,12 +6108,23 @@
           "bin/placeholder/CryptoLib.dll": {}
         }
       },
+      "FiLogger.API.DataContracts/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "compile": {
+          "bin/placeholder/FiLogger.API.DataContracts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FiLogger.API.DataContracts.dll": {}
+        }
+      },
       "FiLogger.Common/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
           "CryptoLib": "1.0.0",
-          "Microsoft.AspNetCore.All": "2.2.2"
+          "Microsoft.AspNetCore.All": "2.2.2",
+          "NLog": "4.5.11"
         },
         "compile": {
           "bin/placeholder/FiLogger.Common.dll": {}
@@ -6129,17 +6149,45 @@
           "bin/placeholder/FiLogger.Context.dll": {}
         }
       },
+      "FiLogger.DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "dependencies": {
+          "FiLogger.Context": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/FiLogger.DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FiLogger.DataAccess.dll": {}
+        }
+      },
       "FiLogger.IoC.Config/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
-          "AutoMapper": "8.0.0"
+          "AutoMapper": "8.0.0",
+          "FiLogger.API.DataContracts": "1.0.0",
+          "FiLogger.Common": "1.0.0"
         },
         "compile": {
           "bin/placeholder/FiLogger.IoC.Config.dll": {}
         },
         "runtime": {
           "bin/placeholder/FiLogger.IoC.Config.dll": {}
+        }
+      },
+      "FiLogger.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "dependencies": {
+          "FiLogger.DataAccess": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/FiLogger.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FiLogger.Service.dll": {}
         }
       }
     }
@@ -10191,6 +10239,39 @@
         "lib/netstandard1.3/Newtonsoft.Json.Bson.xml",
         "newtonsoft.json.bson.1.0.1.nupkg.sha512",
         "newtonsoft.json.bson.nuspec"
+      ]
+    },
+    "NLog/4.5.11": {
+      "sha512": "Yni/XrDfbEhaCSXJsDkmW/n5AunhOxZ7OKKb+0U1I1/d8ZaKt3Jjzf20g/xPiKljmYuZKYqI5iI34g138kK8UQ==",
+      "type": "package",
+      "path": "nlog/4.5.11",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/monoandroid44/NLog.dll",
+        "lib/monoandroid44/NLog.xml",
+        "lib/net35/NLog.dll",
+        "lib/net35/NLog.xml",
+        "lib/net40-client/NLog.dll",
+        "lib/net40-client/NLog.xml",
+        "lib/net45/NLog.dll",
+        "lib/net45/NLog.xml",
+        "lib/netstandard1.3/NLog.dll",
+        "lib/netstandard1.3/NLog.xml",
+        "lib/netstandard1.5/NLog.dll",
+        "lib/netstandard1.5/NLog.xml",
+        "lib/netstandard2.0/NLog.dll",
+        "lib/netstandard2.0/NLog.xml",
+        "lib/sl4/NLog.dll",
+        "lib/sl4/NLog.xml",
+        "lib/sl5/NLog.dll",
+        "lib/sl5/NLog.xml",
+        "lib/wp8/NLog.dll",
+        "lib/wp8/NLog.xml",
+        "lib/xamarinios10/NLog.dll",
+        "lib/xamarinios10/NLog.xml",
+        "nlog.4.5.11.nupkg.sha512",
+        "nlog.nuspec"
       ]
     },
     "NuGet.Frameworks/4.7.0": {
@@ -15910,6 +15991,11 @@
       "path": "../cryptolib/CryptoLib.csproj",
       "msbuildProject": "../cryptolib/CryptoLib.csproj"
     },
+    "FiLogger.API.DataContracts/1.0.0": {
+      "type": "project",
+      "path": "../FiLogger.API.DataContracts/FiLogger.API.DataContracts.csproj",
+      "msbuildProject": "../FiLogger.API.DataContracts/FiLogger.API.DataContracts.csproj"
+    },
     "FiLogger.Common/1.0.0": {
       "type": "project",
       "path": "../fiLogger.Common/FiLogger.Common.csproj",
@@ -15920,10 +16006,20 @@
       "path": "../FiLogger.Context/FiLogger.Context.csproj",
       "msbuildProject": "../FiLogger.Context/FiLogger.Context.csproj"
     },
+    "FiLogger.DataAccess/1.0.0": {
+      "type": "project",
+      "path": "../FiLogger.DataAccess/FiLogger.DataAccess.csproj",
+      "msbuildProject": "../FiLogger.DataAccess/FiLogger.DataAccess.csproj"
+    },
     "FiLogger.IoC.Config/1.0.0": {
       "type": "project",
       "path": "../FiLogger.IoC.Config/FiLogger.IoC.Config.csproj",
       "msbuildProject": "../FiLogger.IoC.Config/FiLogger.IoC.Config.csproj"
+    },
+    "FiLogger.Service/1.0.0": {
+      "type": "project",
+      "path": "../FiLogger.Service/FiLogger.Service.csproj",
+      "msbuildProject": "../FiLogger.Service/FiLogger.Service.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -15932,7 +16028,9 @@
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 6.0.0",
       "CryptoLib >= 1.0.0",
       "FiLogger.Context >= 1.0.0",
+      "FiLogger.DataAccess >= 1.0.0",
       "FiLogger.IoC.Config >= 1.0.0",
+      "FiLogger.Service >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Mvc >= 2.2.0",
       "Microsoft.AspNetCore.Mvc.Versioning >= 3.1.2",
@@ -15988,8 +16086,14 @@
             "C:\\Users\\paul.marrable\\Documents\\Visual Studio 2017\\Projects\\FiLogger\\FiLogger.Context\\FiLogger.Context.csproj": {
               "projectPath": "C:\\Users\\paul.marrable\\Documents\\Visual Studio 2017\\Projects\\FiLogger\\FiLogger.Context\\FiLogger.Context.csproj"
             },
+            "C:\\Users\\paul.marrable\\Documents\\Visual Studio 2017\\Projects\\FiLogger\\FiLogger.DataAccess\\FiLogger.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\paul.marrable\\Documents\\Visual Studio 2017\\Projects\\FiLogger\\FiLogger.DataAccess\\FiLogger.DataAccess.csproj"
+            },
             "C:\\Users\\paul.marrable\\Documents\\Visual Studio 2017\\Projects\\FiLogger\\FiLogger.IoC.Config\\FiLogger.IoC.Config.csproj": {
               "projectPath": "C:\\Users\\paul.marrable\\Documents\\Visual Studio 2017\\Projects\\FiLogger\\FiLogger.IoC.Config\\FiLogger.IoC.Config.csproj"
+            },
+            "C:\\Users\\paul.marrable\\Documents\\Visual Studio 2017\\Projects\\FiLogger\\FiLogger.Service\\FiLogger.Service.csproj": {
+              "projectPath": "C:\\Users\\paul.marrable\\Documents\\Visual Studio 2017\\Projects\\FiLogger\\FiLogger.Service\\FiLogger.Service.csproj"
             }
           }
         }

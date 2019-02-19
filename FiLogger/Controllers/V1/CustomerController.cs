@@ -1,14 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using FiLogger.Common.Models;
 using FiLogger.Context.Data;
-using CryptoLib;
-using Microsoft.Extensions.Logging;
+using FiLogger.Common.Settings;
+using Microsoft.Extensions.Options;
+using AutoMapper;
+using FiLogger.Service.Contracts;
+using vm = FiLogger.API.DataContracts.Customer;
+using dm = FiLogger.Common.Models;
 
 namespace FiLogger.API.Controllers
 {
@@ -18,96 +19,79 @@ namespace FiLogger.API.Controllers
     public class CustomerController : ControllerBase
     {
         private readonly AP_ReplacementContext _context;
-        private readonly ICryptoManager _cryptoManager;
-        readonly ILogger<CustomerController> _logger;
+        private readonly IMapper _mapper;
+        private readonly ICustomerService _service;
 
-        public CustomerController(AP_ReplacementContext context, ICryptoManager cryptoManager, ILogger<CustomerController> logger)
+        public CustomerController(AP_ReplacementContext context, 
+             IOptions<AppSettings> appSettings,
+             IMapper mapper,
+             ICustomerService service)
         {
-            _logger = logger;
-            _cryptoManager = cryptoManager;
             _context = context;
+            _mapper = mapper;
+            _service = service;
         }
+        
 
-        // GET: api/Customer
+        /// <summary>
+        /// Return full list of customers
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CustomerDetails>>> GetCustomerDetails()
+        public async Task<ActionResult<IEnumerable<vm.CustomerDetails>>> Get()
         {
-            return await _context.CustomerDetails.ToListAsync();
+            return _mapper.Map<IEnumerable<vm.CustomerDetails>>(await _service.GetCustomerDetails()).ToList();
         }
 
-        // GET: api/Customer/5
+        /// <summary>
+        /// Get customer via their ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
-        public async Task<ActionResult<CustomerDetails>> GetCustomerDetails(int id)
+        public async Task<ActionResult<vm.CustomerDetails>> Get(int id)
         {
-            CustomerDetails customerDetails = await _context.CustomerDetails.FindAsync(id);
+            return _mapper.Map<vm.CustomerDetails>(await _service.GetCustomerDetails(id)); 
+        }       
 
-            if (customerDetails == null)
-            {
-                return NotFound();
-            }
-
-            return customerDetails;
-        }
-
-        // PUT: api/Customer/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutCustomerDetails(int id, CustomerDetails customerDetails)
-        {
-            if (id != customerDetails.CustomerId)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(customerDetails).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!CustomerDetailsExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
-        // POST: api/Customer
+        /// <summary>
+        /// Create a new customer
+        /// </summary>
+        /// <param name="customerDetails"></param>
+        /// <returns></returns>
         [HttpPost]
-        public async Task<ActionResult<CustomerDetails>> PostCustomerDetails(CustomerDetails customerDetails)
-        {
-            _context.CustomerDetails.Add(customerDetails);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetCustomerDetails", new { id = customerDetails.CustomerId }, customerDetails);
+        public async Task<ActionResult<vm.CustomerDetails>> Post(vm.CustomerDetails customerDetails)
+        {          
+            var createdDetails = _mapper.Map<vm.CustomerDetails>(await _service.CreateCustomerDetails(Mapper.Map<dm.CustomerDetails>(customerDetails)));            
+            return CreatedAtAction("Get", new { id = createdDetails.CustomerId }, createdDetails);
         }
 
-        // DELETE: api/Customer/5
+        /// <summary>
+        /// Update a customer record
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="customerDetails"></param>
+        /// <returns></returns>
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put(int id, vm.CustomerDetails customerDetails)
+        {
+            var updateSuccessful = await _service.UpdateCustomerDetails(id, Mapper.Map<dm.CustomerDetails>(customerDetails));
+            if (updateSuccessful) return Ok(string.Format("Customer with ID of {0} was successfully updated", id));
+            return BadRequest();
+        }
+
+        /// <summary>
+        /// Delete a customer record
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
-        public async Task<ActionResult<CustomerDetails>> DeleteCustomerDetails(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            var customerDetails = await _context.CustomerDetails.FindAsync(id);
-            if (customerDetails == null)
-            {
-                return NotFound();
-            }
-
-            _context.CustomerDetails.Remove(customerDetails);
-            await _context.SaveChangesAsync();
-
-            return customerDetails;
+            var deleteSuccessful = await _service.DeleteCustomerDetails(id);
+            if (deleteSuccessful) return Ok(string.Format("Customer with ID of {0} was successfully deleted",id));
+            return BadRequest();             
         }
-
-        private bool CustomerDetailsExists(int id)
-        {
-            return _context.CustomerDetails.Any(e => e.CustomerId == id);
-        }
+        
     }
 }

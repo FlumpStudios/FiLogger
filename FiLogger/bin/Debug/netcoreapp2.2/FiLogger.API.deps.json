@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "88f13888f5db341adf45de303cd188b34a46782b"
+    "signature": "1e9f6b7c75d2183797a4478fca57501be133519b"
   },
   "compilationOptions": {
     "defines": [
@@ -28,7 +28,9 @@
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "6.0.0",
           "CryptoLib": "1.0.0",
           "FiLogger.Context": "1.0.0",
+          "FiLogger.DataAccess": "1.0.0",
           "FiLogger.IoC.Config": "1.0.0",
+          "FiLogger.Service": "1.0.0",
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.AspNetCore.Mvc": "2.2.0",
           "Microsoft.AspNetCore.Mvc.Versioning": "3.1.2",
@@ -1490,6 +1492,17 @@
           "Microsoft.NETCore.Platforms": "2.2.0"
         }
       },
+      "NLog/4.5.11": {
+        "runtime": {
+          "lib/netstandard2.0/NLog.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.5.11.8645"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/NLog.dll": {}
+        }
+      },
       "NuGet.Frameworks/4.7.0": {
         "dependencies": {
           "NETStandard.Library": "2.0.3"
@@ -2323,10 +2336,19 @@
           "CryptoLib.dll": {}
         }
       },
+      "FiLogger.API.DataContracts/1.0.0": {
+        "runtime": {
+          "FiLogger.API.DataContracts.dll": {}
+        },
+        "compile": {
+          "FiLogger.API.DataContracts.dll": {}
+        }
+      },
       "FiLogger.Common/1.0.0": {
         "dependencies": {
           "CryptoLib": "1.0.0",
-          "Microsoft.AspNetCore.All": "2.2.2"
+          "Microsoft.AspNetCore.All": "2.2.2",
+          "NLog": "4.5.11"
         },
         "runtime": {
           "FiLogger.Common.dll": {}
@@ -2349,15 +2371,39 @@
           "FiLogger.Context.dll": {}
         }
       },
+      "FiLogger.DataAccess/1.0.0": {
+        "dependencies": {
+          "FiLogger.Context": "1.0.0"
+        },
+        "runtime": {
+          "FiLogger.DataAccess.dll": {}
+        },
+        "compile": {
+          "FiLogger.DataAccess.dll": {}
+        }
+      },
       "FiLogger.IoC.Config/1.0.0": {
         "dependencies": {
-          "AutoMapper": "8.0.0"
+          "AutoMapper": "8.0.0",
+          "FiLogger.API.DataContracts": "1.0.0",
+          "FiLogger.Common": "1.0.0"
         },
         "runtime": {
           "FiLogger.IoC.Config.dll": {}
         },
         "compile": {
           "FiLogger.IoC.Config.dll": {}
+        }
+      },
+      "FiLogger.Service/1.0.0": {
+        "dependencies": {
+          "FiLogger.DataAccess": "1.0.0"
+        },
+        "runtime": {
+          "FiLogger.Service.dll": {}
+        },
+        "compile": {
+          "FiLogger.Service.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -5598,6 +5644,13 @@
       "path": "netstandard.library/2.0.3",
       "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
     },
+    "NLog/4.5.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Yni/XrDfbEhaCSXJsDkmW/n5AunhOxZ7OKKb+0U1I1/d8ZaKt3Jjzf20g/xPiKljmYuZKYqI5iI34g138kK8UQ==",
+      "path": "nlog/4.5.11",
+      "hashPath": "nlog.4.5.11.nupkg.sha512"
+    },
     "NuGet.Frameworks/4.7.0": {
       "type": "package",
       "serviceable": true,
@@ -5925,6 +5978,11 @@
       "serviceable": false,
       "sha512": ""
     },
+    "FiLogger.API.DataContracts/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "FiLogger.Common/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -5935,7 +5993,17 @@
       "serviceable": false,
       "sha512": ""
     },
+    "FiLogger.DataAccess/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "FiLogger.IoC.Config/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FiLogger.Service/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
